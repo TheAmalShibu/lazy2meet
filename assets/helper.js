@@ -16,10 +16,10 @@ MY_AUTH_USER = '1'
 
 // # ss      dur-ogbt-zdy
 // # flat    pfs-cpqc-fmq
-// # cn      mwz-acxx-apm
-// # mm      dqp-muhy-fde
+// # cn      mev-sxuc-esw
+// # mm      rrq-ifhz-ypy
 // # mss     isf-nnjj-joj
-// # dm      nec-ycwt-ymn
+// # dm      zto-tnxv-xeh
 // # dbmslab dqp-muhy-fde 
 
 
@@ -28,7 +28,7 @@ function getDetails(name){
     switch(name) {
         case 'CN':
             courseName = "CST 303 Computer Networks (CN)"
-            meetCode = "mwz-acxx-apm"
+            meetCode = "mev-sxuc-esw"
             return [courseName, meetCode]
 
         case 'SS':
@@ -38,7 +38,7 @@ function getDetails(name){
 
         case 'DM':
             courseName = "MCN 301 Disaster Management (DM)"
-            meetCode = "nec-ycwt-ymn"
+            meetCode = "zto-tnxv-xeh"
             return [courseName, meetCode]
 
         case 'FLAT':
@@ -48,7 +48,7 @@ function getDetails(name){
 
         case 'MM':
             courseName = "CST 307 Microprocessors and Microcontrollers (MM)"
-            meetCode = "dqp-muhy-fde"
+            meetCode = "rrq-ifhz-ypy"
             return [courseName, meetCode]
 
         case 'MSS':
@@ -58,17 +58,26 @@ function getDetails(name){
 
         case 'DBMSLAB':
             courseName = "CSL 333 Database Management System Lab (DBMS Lab)"
-            meetCode = "dqp-muhy-fde"
+            meetCode = "Link Unavailable"
             return [courseName, meetCode]
+        
+        case 'NOCLASS':
+            courseName = "Bruh! No Class Today!"
+            meetCode = "Seriously ?"
+            return [courseName, meetCode]
+            
     }
 }
 
 TIME_TABLE = {
-    "Monday":['CN', 'SS', 'DM', 'FLAT', 'MM'],
-    "Tuesday": ['SS', 'CN', 'FLAT', 'MM', "MSS"],
-    "Wednesday":['MM', 'FLAT', 'CN', 'DBMSLAB', 'MSS'],
-    "Thursday":['SS', 'CN', 'MSS', "FLAT", 'MM'],
-    "Friday":['FLAT', 'CN', 'SS', 'MM', 'DM'],
+    "Monday":['CN', 'FLAT', 'MSS', 'SS', 'MM'],
+    "Tuesday": ['FLAT', 'MM', 'SS', 'DBMSLAB', "DM"],
+    "Wednesday":['CN', 'SS', 'MM', 'FLAT', 'CN'],
+    "Thursday":['CN', 'FLAT', 'MM', "DM", 'MSS'],
+    "Friday":['SS', 'MM', 'MSS', 'FLAT', 'CN'],
+    "Saturday":['NOCLASS','NOCLASS','NOCLASS','NOCLASS','NOCLASS'],
+    "Sunday":['NOCLASS','NOCLASS','NOCLASS','NOCLASS','NOCLASS']
+
 }
 
 function getTime(v) {
@@ -108,7 +117,7 @@ function display() {
             document.getElementById('class3link').appendChild(clone);
 
             let lab = document.getElementById('lab-ss');
-            lab.href = `http://meet.google.com/dur-ogbt-zdy?pli=1&authuser=${MY_AUTH_USER}`
+            lab.href = `#&authuser=${MY_AUTH_USER}`
             lab.getElementsByTagName("h3")[0].innerHTML = "CSL 331 System Software And Microprocessors Lab (SS Lab)"
             lab.getElementsByTagName("p").innerHTML = `${getTime(i)} &nbsp;<b> &middot;</b> &nbsp; dur-ogbt-zdy}`
 
